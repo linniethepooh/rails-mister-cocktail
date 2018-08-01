@@ -1,13 +1,44 @@
-<h1> Cocktail: <%= @cocktail.name %></h1>
+<div class="wrapper">
+  <div class="show-container">
+    <div>
+      <h1> <%= @cocktail.name %> </h1>
+    </div>
 
-<h2>Doses</h2>
-<% @cocktail.doses.each do |dose| %>
-<%= dose.description %>
-
-<%= link_to "Delete", dose_path(dose), method: :delete,
-  data: {confirm: "Are you sure" } %>
-<% end %>
+    <img src=<%= image_path "dirty-martini.jpg" %> >
 
 
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back to list", root_path %>
+    <div class="divider ">
+      <hr>
+      <div class="divider-container">
+        <h4>INGREDIENTS IN THE <%= @cocktail.name %> COCKTAIL</h4>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <table style="width:100%">
+        <th>Dose</th>
+        <th> Action </th>
+        <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td> <%= dose.description %> </td>
+          <td>   <%= link_to "Delete", dose_path(dose), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default"  %> </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-default" %>
+    <div class="divider ">
+      <hr>
+      <div class="divider-container">
+        <h4>HOW TO MAKE THE <%= @cocktail.name %> COCKTAIL</h4>
+      </div>
+    </div>
+
+    <p>
+      Add all the ingredients into a mixing glass with ice and stir until very cold.
+      <br>
+      <br>
+      Strain into a chilled cocktail glass.
+    </p>
+  </div>
+</div>
+</div>

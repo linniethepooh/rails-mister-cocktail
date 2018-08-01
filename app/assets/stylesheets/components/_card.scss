@@ -1,0 +1,51 @@
+.card-container {
+  margin-bottom: 50px;
+}
+.card {
+  height: 300px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 10px;
+}
+
+.description {
+  color: black;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.description:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 70%; /* 2 */
+
+  padding-right: 20px; /* 3 */
+  padding-left:  20px; /* 3 */
+}
+
+.divider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

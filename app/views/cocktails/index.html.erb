@@ -1,6 +1,29 @@
-<h1>Cocktails</h1>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "background.png" %>)">
+      <div class="banner-container">
+        <h1>COCKTAIL RECIPES</h1>
+        <h3>There's a drink for every mood or occasion. Find your favorite cocktail recipes below. Or think outside the glass and try a brand new drink. Your new favorite could be a shake or stir away. </h3>
+      </div>
+    </div>
+    <!-- <div class="embed-responsive embed-responsive-4by3">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=dQkdZgBc6LQ"></iframe>
+    </div> -->
+    <div class="divider ">
+      <hr>
+      <div class="divider-container">
+        <h4>CLASSIC COCKTAILS</h4>
+      </div>
+    </div>
 
-<% @cocktails.each do |cocktail| %>
-<%= link_to cocktail.name, cocktail_path(cocktail)%>
-<% end %>
-<%= link_to "Add new cocktail", new_cocktail_path%>
+  <div class="container-fluid card-container text-center">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path "dirty-martini.jpg" %>)">
+          <a class="card-link" href="#" ></a>
+      </div>
+      <%= link_to cocktail.name, cocktail_path(cocktail), class: "description" %>
+    </div>
+    <% end %>
+  </div>
+
+
+
